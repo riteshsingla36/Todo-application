@@ -1,0 +1,76 @@
+.main-card {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    color: black;
+    
+}
+
+
+.main-card-black {
+    color: black;
+}
+
+
+.main-completed, .main-pending {
+    width: 100%;
+}
+
+.main-completed div , .main-pending div {
+    background-color: aquamarine;
+    border-radius: 5px;
+    width: 70%;
+    margin: 5px auto;
+    padding: 5px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    animation: fade .5s ease-in-out;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.main-completed-black div, .main-pending-black div {
+    background-color: white
+}
+
+.main-h2 {
+    color: black;
+}
+
+.main-h2-black {
+    color: white;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    .main-card {
+        flex-direction: column;
+    }
+    .main-pending h3, .main-completed h3 {
+        text-align: left;
+        width: 100%;
+        word-break:break-all;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

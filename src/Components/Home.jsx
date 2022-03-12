@@ -15,7 +15,7 @@ const Home = () => {
   const [id, setId] = useState(0)
 
   async function get_details() {
-    var res = await fetch("http://localhost:3001/users", {
+    var res = await fetch("https://todo-app36.herokuapp.com/api/users", {
       method: "GET",
       headers: {
         "Content-Type": 'application/json'
@@ -47,11 +47,11 @@ const Home = () => {
 
   function completed(obj) {
     var update_todo = data.filter(ele => ele !== obj)
-    axios.patch(`http://localhost:3001/users/${id}`, { todos: update_todo })
+    axios.patch(`https://todo-app36.herokuapp.com/api/users/${id}`, { todos: update_todo })
       .then(
         () => {
 
-          axios.patch(`http://localhost:3001/users/${id}`, { completed_todos: [...completedData, obj] })
+          axios.patch(`https://todo-app36.herokuapp.com/api/users/${id}`, { completed_todos: [...completedData, obj] })
             .then(() => get_details())
         }
       )
@@ -75,7 +75,7 @@ const Home = () => {
 
   function deletes(obj) {
     var update_todo = completedData.filter(ele => ele !== obj)
-    axios.patch(`http://localhost:3001/users/${id}`, { completed_todos: update_todo })
+    axios.patch(`https://todo-app36.herokuapp.com/api/users/${id}`, { completed_todos: update_todo })
       .then(() => get_details())
       .catch((err) => console.log(err))
   }
@@ -93,7 +93,7 @@ const Home = () => {
 
 
   async function post(todo) {
-    var res = await fetch(`http://localhost:3001/users/${id}`, {
+    var res = await fetch(`https://todo-app36.herokuapp.com/api/users/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": 'application/json'

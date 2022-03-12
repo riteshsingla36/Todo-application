@@ -17,7 +17,7 @@ const Signup = () => {
 
     function post(obj) {
         console.log(obj)
-        axios.post(`http://localhost:3001/users`, obj)
+        axios.post(`https://todo-app36.herokuapp.com/api/users`, obj)
         .then(
             () => navigate("/login")
         )
@@ -36,7 +36,7 @@ const Signup = () => {
             completed_todos: []
         }
         if (password === password1) {
-            axios.get(`http://localhost:3001/users`)
+            axios.get(`https://todo-app36.herokuapp.com/api/users`)
                 .then(
                     (res) => {
                         var data = res.data.filter(ele => ele.email === email)

@@ -19,7 +19,7 @@ const Login = () => {
     }, [login])
 
     async function user(obj) {
-        var res = await fetch("http://localhost:3001/users", {
+        var res = await fetch("https://todo-app36.herokuapp.com/api/users", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
